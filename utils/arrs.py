@@ -5,16 +5,12 @@ def get(array, index, default=None):
     """
     Извлекает из списка значение по указанному индексу, если индекс существует.
     Если индекс не существует, возвращает значение по умолчанию.
-    Функция работает только с неотрицательными индексами.
-    :param array: исходный список.
-    :param index: индекс извлекаемого элемента.
-    :param default: значение по-умолчанию.
-    :return: значение по индексу или значение по-умолчанию.
     """
-    if index < 0:
+    try:
+        return array[index]
+    except IndexError:
         return default
 
-    return array[index]
 
 
 def my_slice(coll, start=0, end=None):
